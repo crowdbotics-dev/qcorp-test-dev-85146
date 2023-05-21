@@ -32,6 +32,27 @@ function rest_auth_logout_retrieve(payload) {
 function rest_auth_logout_create(payload) {
   return qcorptestdevAPI.post(`/rest-auth/logout/`)
 }
+function api_v1_employment_list(payload) {
+  return qcorptestdevAPI.get(`/api/v1/employment/`)
+}
+function api_v1_employment_create(payload) {
+  return qcorptestdevAPI.post(`/api/v1/employment/`, payload.data)
+}
+function api_v1_employment_retrieve(payload) {
+  return qcorptestdevAPI.get(`/api/v1/employment/${payload.id}/`)
+}
+function api_v1_employment_update(payload) {
+  return qcorptestdevAPI.put(`/api/v1/employment/${payload.id}/`, payload.data)
+}
+function api_v1_employment_partial_update(payload) {
+  return qcorptestdevAPI.patch(
+    `/api/v1/employment/${payload.id}/`,
+    payload.data
+  )
+}
+function api_v1_employment_destroy(payload) {
+  return qcorptestdevAPI.delete(`/api/v1/employment/${payload.id}/`)
+}
 function rest_auth_registration_create(payload) {
   return qcorptestdevAPI.post(`/rest-auth/registration/`, payload.data)
 }
@@ -63,6 +84,12 @@ export const apiService = {
   rest_auth_login_create,
   rest_auth_logout_retrieve,
   rest_auth_logout_create,
+  api_v1_employment_list,
+  api_v1_employment_create,
+  api_v1_employment_retrieve,
+  api_v1_employment_update,
+  api_v1_employment_partial_update,
+  api_v1_employment_destroy,
   rest_auth_registration_create,
   rest_auth_password_reset_create,
   rest_auth_password_change_create,
