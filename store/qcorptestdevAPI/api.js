@@ -50,11 +50,32 @@ function rest_auth_logout_retrieve(payload) {
 function rest_auth_logout_create(payload) {
   return qcorptestdevAPI.post(`/rest-auth/logout/`)
 }
+function api_v1_demofields_list(payload) {
+  return qcorptestdevAPI.get(`/api/v1/demofields/`)
+}
+function api_v1_demofields_create(payload) {
+  return qcorptestdevAPI.post(`/api/v1/demofields/`, payload.data)
+}
 function api_v1_employment_list(payload) {
   return qcorptestdevAPI.get(`/api/v1/employment/`)
 }
 function api_v1_employment_create(payload) {
   return qcorptestdevAPI.post(`/api/v1/employment/`, payload.data)
+}
+function api_v1_demofields_retrieve(payload) {
+  return qcorptestdevAPI.get(`/api/v1/demofields/${payload.id}/`)
+}
+function api_v1_demofields_update(payload) {
+  return qcorptestdevAPI.put(`/api/v1/demofields/${payload.id}/`, payload.data)
+}
+function api_v1_demofields_partial_update(payload) {
+  return qcorptestdevAPI.patch(
+    `/api/v1/demofields/${payload.id}/`,
+    payload.data
+  )
+}
+function api_v1_demofields_destroy(payload) {
+  return qcorptestdevAPI.delete(`/api/v1/demofields/${payload.id}/`)
 }
 function api_v1_employment_retrieve(payload) {
   return qcorptestdevAPI.get(`/api/v1/employment/${payload.id}/`)
@@ -108,8 +129,14 @@ export const apiService = {
   api_v1_home_destroy,
   rest_auth_logout_retrieve,
   rest_auth_logout_create,
+  api_v1_demofields_list,
+  api_v1_demofields_create,
   api_v1_employment_list,
   api_v1_employment_create,
+  api_v1_demofields_retrieve,
+  api_v1_demofields_update,
+  api_v1_demofields_partial_update,
+  api_v1_demofields_destroy,
   api_v1_employment_retrieve,
   api_v1_employment_update,
   api_v1_employment_partial_update,
