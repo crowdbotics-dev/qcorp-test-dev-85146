@@ -12,3 +12,6 @@ class Home(models.Model):
 class PartyTime(models.Model):
     'Generated Model'
     party_one = models.BigIntegerField()
+class TT(models.Model):
+    'Generated Model'
+    tt = models.BigIntegerField()

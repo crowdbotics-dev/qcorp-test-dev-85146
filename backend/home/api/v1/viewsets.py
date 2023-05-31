@@ -1,6 +1,6 @@
 from rest_framework import viewsets
-from home.models import Home,PartyTime
-from .serializers import HomeSerializer,PartyTimeSerializer
+from home.models import Home,PartyTime,TT
+from .serializers import HomeSerializer,PartyTimeSerializer,TTSerializer
 from rest_framework import authentication
 from rest_framework.authtoken.serializers import AuthTokenSerializer
 from rest_framework.viewsets import ModelViewSet, ViewSet
@@ -42,3 +42,8 @@ class PartyTimeViewSet(viewsets.ModelViewSet):
     serializer_class = PartyTimeSerializer
     authentication_classes = (authentication.SessionAuthentication, authentication.TokenAuthentication)
     queryset = PartyTime.objects.all()
+
+class TTViewSet(viewsets.ModelViewSet):
+    serializer_class = TTSerializer
+    authentication_classes = (authentication.SessionAuthentication, authentication.TokenAuthentication)
+    queryset = TT.objects.all()
