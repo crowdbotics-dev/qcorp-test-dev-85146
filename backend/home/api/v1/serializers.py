@@ -1,5 +1,5 @@
 from django.contrib.auth import get_user_model
-from home.models import Home,PartyTime,TT
+from home.models import Home,PartyTime,TT,Ttttttt
 from django.http import HttpRequest
 from django.utils.translation import ugettext_lazy as _
 from allauth.account import app_settings as allauth_settings
@@ -92,4 +92,10 @@ class TTSerializer(serializers.ModelSerializer):
 
     class Meta:
         model = TT
+        fields = "__all__"
+
+class TttttttSerializer(serializers.ModelSerializer):
+
+    class Meta:
+        model = Ttttttt
         fields = "__all__"

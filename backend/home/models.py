@@ -16,3 +16,6 @@ class PartyTime(models.Model):
 class TT(models.Model):
     'Generated Model'
     tt = models.BigIntegerField()
+class Ttttttt(models.Model):
+    'Generated Model'
+    ddddd = models.BigIntegerField()
